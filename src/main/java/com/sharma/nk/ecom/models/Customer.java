@@ -26,8 +26,7 @@ public class Customer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	private String customerId;
+	private int customerId;
 	private String name;
 	private String type;
 	private Date dob;
@@ -43,11 +42,11 @@ public class Customer {
 	@LastModifiedDate
 	private Date updatedAt;
 
-	public String getCustomerId() {
+	public int getCustomerId() {
 		return customerId;
 	}
 
-	public Customer withCustomerId(String customerId) {
+	public Customer withCustomerId(int customerId) {
 		this.customerId = customerId;
 		return this;
 	}
@@ -91,5 +90,18 @@ public class Customer {
 	public Customer removeAddress(Address address) {
 		this.addresses.remove(address);
 		return this;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer{" +
+				"customerId=" + customerId +
+				", name='" + name + '\'' +
+				", type='" + type + '\'' +
+				", dob=" + dob +
+				", addresses=" + addresses +
+				", createdAt=" + createdAt +
+				", updatedAt=" + updatedAt +
+				'}';
 	}
 }

@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties(value = { "createdAt", "updatedAt" })
+@JsonIgnoreProperties(value = { "createdAt", "updatedAt", "id" })
 public class Address {
 
 	@Id
@@ -91,5 +91,20 @@ public class Address {
 	public Address withType(String type) {
 		this.type = type;
 		return this;
+	}
+
+	@Override
+	public String toString() {
+		return "Address{" +
+				"id=" + id +
+				", houseName='" + houseName + '\'' +
+				", city='" + city + '\'' +
+				", state='" + state + '\'' +
+				", pincode='" + pincode + '\'' +
+				", landmark='" + landmark + '\'' +
+				", type='" + type + '\'' +
+				", createdAt=" + createdAt +
+				", updatedAt=" + updatedAt +
+				'}';
 	}
 }
