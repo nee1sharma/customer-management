@@ -1,0 +1,21 @@
+
+server.port:  8010
+server.servlet.context-path: /
+spring.application.name: customer-management
+
+logging.level.com.sharma.nk.ecom: debug
+
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  datasource:
+    password: pass
+    username: sa
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:file:~/customertestdb
+  h2:
+    console:
+      path: /h2
+      enabled: true
